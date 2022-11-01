@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddAlbum() {
+export default function AddAlbum({ setToggle, toggle }) {
     const [album, setAlbum] = useState('')
     const [artist, setArtist] = useState('')
     const [year, setYear] = useState(1970)
@@ -21,6 +21,7 @@ export default function AddAlbum() {
     })
     .then(() => {
         //assume it worked...
+        setToggle(!toggle)
         setAlbum('')
         setArtist('')
         setYear(1970)
