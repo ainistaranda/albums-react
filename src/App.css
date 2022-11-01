@@ -17,3 +17,7 @@ header {
   margin: 1em;
 }
 
+.add-album{
+  border: 2px solid green;
+  margin: calc(1em + 1vw);
+}
