@@ -5,12 +5,12 @@ import AddAlbum from './components/AddAlbum';
 import './App.css';
 
 function App() {
-  const [toggle, setToggle] = useState(true)
+  const [albums, setAlbums] = useState()
   return (
     <div className="App">
       <Header />
-      <AlbumList toggle={toggle} />
-      <AddAlbum setToggle={setToggle} toggle={toggle}/>
+      <AlbumList setAlbums={setAlbums} albums={albums} />
+      <AddAlbum setAlbums={setAlbums}/>
     </div>
   );
 }

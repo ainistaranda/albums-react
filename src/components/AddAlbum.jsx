@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddAlbum({ setToggle, toggle }) {
+export default function AddAlbum({ setAlbums }) {
     const [album, setAlbum] = useState('')
     const [artist, setArtist] = useState('')
     const [year, setYear] = useState(1970)
@@ -19,9 +19,10 @@ export default function AddAlbum({ setToggle, toggle }) {
         },
         body: JSON.stringify(newAlbum)
     })
-    .then(() => {
+    .then(response =>response.json())
+    .then(data => {
         //assume it worked...
-        setToggle(!toggle)
+        setAlbums(data)
         setAlbum('')
         setArtist('')
         setYear(1970)

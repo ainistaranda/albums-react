@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import AlbumCard from './AlbumCard'
 
 
-export default function AlbumList({ toggle }) {
-    const [albums, setAlbums] = useState()
+export default function AlbumList({ albums, setAlbums }) {
+    
     useEffect(() => {
         fetch('https://albums-api-at.web.app/albums')
         .then(response => response.json())
         .then(setAlbums)
         .catch(alert)
-    }, [toggle])
+    }, [setAlbums])
     return (
         <main className='album-list'>
             {!albums
